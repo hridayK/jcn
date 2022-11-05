@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+def xor(diviend, divisor):
+    diviend, divisor = list(diviend), list(divisor)
+    out = []
+    for a, b in zip(diviend, divisor):
+        out.append("0" if a == b else "1")
+    
+    return str(int("".join(out)))
+
+cg = input("enter generator value")# "1001"
+data = input("enter data to be sent")# "11010"
+
+k = len(cg)
+
+codeword = data + ("0" * k)
+print(codeword)
+print(cg)
+
+temp = codeword
+selected_number = ""
+
+while len(codeword) > 0:
+    try:
+        while len(selected_number) != len(cg):
+            selected_number += codeword[0]
+            codeword = codeword[1:]
+            selected_number = str(int(selected_number))
+
+        selected_number = xor(selected_number, cg)
+    except:
+        pass
+
+_remainder = ("0" * (len(cg)-len(selected_number))) + selected_number
+codeword = data + _remainder
+print("Final remainder:", _remainder)
+print("Old Codeword:", temp)
+print("Final Codeword: ", codeword)
+
+r_codeword = codeword
+selected_number = ""
+
+while len(r_codeword) > 0:
+    try:
+        while len(selected_number) != len(cg):
+            selected_number += r_codeword[0]
+            r_codeword = r_codeword[1:]
+            selected_number = str(int(selected_number))
+
+        selected_number = xor(selected_number, cg)
+    except:
+        pass
+
+_remainder = selected_number + ("0" * (len(cg)-len(selected_number)))
+print("Final remainder", _remainder)
+if int(_remainder) == 0:
+    print("No Error")
+else:
+    print("Error Found, frame discarded")
+     -->
+</body>
+</html>

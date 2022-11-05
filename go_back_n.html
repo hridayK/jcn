@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+from random import choices
+
+def failed_or_not():
+    return choices(
+        [0, 1],
+        [0.4, 0.6]
+    )[0]
+
+sending_window_bits = 3
+sending_window_size = (2**sending_window_bits)-1
+receiving_window_size = 1
+
+num_frames = 20
+
+frames = []
+counter = 0
+
+for i in range(num_frames):
+    frames.append(counter)
+
+    if sending_window_size==counter:
+        counter = 0
+    else:
+        counter += 1
+
+frames
+
+receiver_seq_num = 0
+
+while len(frames) > 0:
+    sent_succ = []
+    sent_seq_num = []
+
+    # sending data from the sender
+    sent_count = sending_window_size
+    while sent_count > 0 and len(frames) > 0:
+        try:
+            to_send = frames[sending_window_size-sent_count]
+            error = failed_or_not()
+
+            sent_seq_num.append(to_send)
+            sent_succ.append(error)
+
+            sent_count -= 1
+        except:
+            break
+
+    print(f"Receiver seq number start: {receiver_seq_num}")
+    print(f"Sending window: {sent_seq_num}")
+    print(f"Success: {sent_succ}")
+
+    ack = None
+    # receiver checking the received frames
+    for item, succ in zip(sent_seq_num, sent_succ):
+        if item == receiver_seq_num:
+            if succ == 1:
+                receiver_seq_num = receiver_seq_num + 1 if receiver_seq_num < sending_window_size else 0
+                ack = item
+            else:
+                break
+    
+    # send acknowledgement
+    ack_succ = failed_or_not()
+
+    print(f"Acknowledge: {ack}")
+    print(f"Acknowledge success: {ack_succ}")
+
+    if ack_succ == 1 and ack != None:
+        frames = frames[frames.index(ack)+1:]
+
+    print(f"Current Frames: {frames}\n")
+
+     -->
+</body>
+</html>

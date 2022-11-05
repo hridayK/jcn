@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+import math
+
+from regex import E
+
+def Log2(x):
+    return math.log(x, 2)
+
+def isPowerOfTwo(n):
+    return (math.ceil(Log2(n)) == math.floor(Log2(n)))
+
+data_stream = input("Enter the data stream: ")
+r_data = list(reversed(data_stream))
+m = len(data_stream)
+
+for i in range(m):
+    if 2**i >= m+i+1:
+        break
+
+print("Number of parity bits", i)
+
+code_word = [5] * (m+i+1)
+p = []
+data_idx = 0
+
+# fill in the initial bits
+for idx in range(3, len(code_word)):
+    if not isPowerOfTwo(idx):
+        code_word[idx] = int(r_data[data_idx])
+        data_idx+=1
+        
+for k in range(1, len(code_word)):
+    if code_word[k] == 5:
+        to_skip = False
+        idx = k
+        count, temp = 0, 1
+        while idx < len(code_word):
+            if not to_skip:
+                if code_word[idx] == 1:
+                    count+=1
+                
+            if temp == k:
+                temp = 1
+                to_skip = not to_skip
+            else:
+                temp += 1
+            
+            idx += 1
+        
+        parity = 1 if not count%2==0 else 0
+        print(f"P {k}: {parity}")
+        p.append(parity)
+        code_word[k] = parity
+                
+print("".join([str(item) for item in reversed(code_word[1:])]))
+print(f"Parities: {p}")
+
+error_position = int(input("Insert error at: "))
+print("Data sent: ", code_word)
+code_word[error_position] = int(not code_word[error_position])
+print("Data Received: ", code_word)
+
+code_word = code_word[::-1] + [5]
+p_new = []
+     -->
+</body>
+</html>
